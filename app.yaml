@@ -1,0 +1,40 @@
+application: avian-principle-90010
+version: 1
+runtime: php
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /css/(.*\.(css$))
+  static_files: css/\1
+  upload: css/(.*\.(css$))
+  application_readable: true
+
+
+- url: /img/(.*\.(jpg$|png$))
+  static_files: img/\1
+  upload: img/(.*\.(jpg$|png$))
+  application_readable: true
+
+- url: /js/(.*\.(js$))
+  static_files: js/\1
+  upload: js/(.*\.(js$))
+  application_readable: true
+
+- url: /pdf/(.*\.(pdf$))
+  static_files: pdf/\1
+  upload: pdf/(.*\.(pdf$))
+  application_readable: true
+
+- url: /
+  script: index.php
+
+- url: /index.php
+  script: index.php
+
+- url: /process_invoice.php
+  script: process_invoice.php
