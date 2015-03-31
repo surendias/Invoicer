@@ -317,6 +317,15 @@
                     <td></td>
                     <td></td>
                     <td></td>
+                    <th>Advance</th>
+                    <td><input type="text" id="advance" name="advance" value="0" placeholder="%"
+                               onchange="calculateSubTotals()" required/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <th>Total Due</th>
                     <td><input type="text" id="total_due" name="total_due" value="0" readonly required/></td>
                 </tr>
@@ -459,15 +468,21 @@
         var taxes = sub_total * parseFloat(document.getElementById('taxes').value) / 100;
         var discounts = sub_total * parseFloat(document.getElementById('discounts').value) / 100;
 
+        var advance = parseFloat(document.getElementById('advance').value);
+
         if (isNaN(taxes) || taxes == '' || taxes == undefined)
             taxes = 0;
 
         if (isNaN(discounts) || discounts == '' || discounts == undefined)
             discounts = 0;
 
+        if (isNaN(advance) || advance == '' || advance == undefined)
+            advance = 0;
+
+
 
         document.getElementById('sub_total').value = sub_total;
-        document.getElementById('total_due').value = sub_total + taxes - discounts;
+        document.getElementById('total_due').value = sub_total + taxes - discounts - advance;
 
     }
 </script>

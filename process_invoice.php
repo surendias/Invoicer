@@ -79,6 +79,9 @@ if($success_status) {
 
     $currency_code = $_REQUEST['currency_code'];
     $invoice_details_table = "";
+    $sub_total = number_format($_REQUEST["sub_total"], 2);
+    $total_due = number_format($_REQUEST["total_due"], 2);
+    $advance = number_format($_REQUEST["advance"], 2);
 
     for($i = 0; $i < count($_REQUEST['item_no']); $i++) {
         $invoice_details_table .= "<tr><td>".$_REQUEST['item_no'][$i]."</td><td>".$_REQUEST['item'][$i]."</td><td>".$_REQUEST['description'][$i]."</td><td> ".$currency_code . " " .number_format($_REQUEST['unit_price'][$i], 2)."</td><td>".$_REQUEST['quantity'][$i]."</td><td> ".$currency_code . " " .number_format($_REQUEST['total'][$i], 2)."</td></tr>";
@@ -86,8 +89,7 @@ if($success_status) {
 
 
 
-    $sub_total = number_format($_REQUEST["sub_total"], 2);
-    $total_due = number_format($_REQUEST["total_due"], 2);
+
 
 //print_r($invoice_details_table);
 
@@ -173,6 +175,14 @@ if($success_status) {
                     <td></td>
                     <th>Discounts</th>
                     <td>{$_REQUEST["discounts"]} %</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <th>Advance</th>
+                    <td>{$currency_code} {$advance}</td>
                 </tr>
                 <tr>
                     <td></td>
