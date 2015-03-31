@@ -5,3 +5,41 @@ table {
 .button {
     width: 100%;
 }
+
+.header {
+    border-bottom: 5px solid #74bfdd;
+}
+
+.header h1 {
+    color: #fff;
+    background: #003f54;
+    padding: 20px;
+}
+
+h4 {
+    background: #74bfdd;
+    color: #fff;
+    padding: 10px;
+    border-bottom: 5px solid #003f54;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+h5 {
+    background: #74bfdd;
+    padding: 10px;
+    color: #333333;
+
+}
+
+label {
+    color: #444444;
+    font-weight: bold;
+}
+
+.footer {
+    margin-top: 30px;
+    background: #444444;
+    color: #c0c0c0;
+    padding: 20px;
+}
