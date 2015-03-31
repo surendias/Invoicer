@@ -353,13 +353,14 @@
         <div class="large-12 columns">
             <h4>Actions</h4>
 
-            <div class="row text-center">
+            <div class="row text-center action-buttons">
                 <div class="large-12 columns">
+                    <p>Please click the check box to prove that your not a spam bot. Thanks.</p>
                     <div class="g-recaptcha" data-sitekey="6LcsmAQTAAAAAIKkuHijL8SQbMSL-vxlzJIyZAau"></div>
                 </div>
             </div>
 
-            <div class="row text-center">
+            <div class="row text-center action-buttons">
                 <div class="large-12 columns">
                     <input type="submit" class="button success round" value="Generate PDF"/>
                 </div>
@@ -371,7 +372,8 @@
 
 <div class="row footer">
     <div class="large-12 columns text-center">
-        <p class="copyright">&copy; <?php echo date('Y'); ?> Suren Dias. <a href="http://surendias.com" target="_blank">web</a> . <a href="http://codias.wordpress.com" target="_blank">blog</a></p>
+        <p class="copyright">&copy; <?php echo date('Y'); ?> Suren Dias. <a href="http://surendias.com" target="_blank">web</a> . <a href="http://codias.wordpress.com" target="_blank">blog</a> .
+            <a href="https://github.com/surendias/Invoicer" target="_blank">Source on github</a></p>
     </div>
 </div>
 
