@@ -32,7 +32,7 @@
     </div>
 </div><!--end header-->
 
-<form action="process_invoice.php" method="post" id="invoice_form">
+<form action="process_invoice_new.php" method="post" id="invoice_form">
 
     <div class="row">
         <div class="large-12 columns">
@@ -145,18 +145,13 @@
                             </label>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <label>Fax
-                                <input type="text" name="your_fax" placeholder=""/>
-                            </label>
-                        </div>
+
                     </div>
 
                 </div>
 
             </div>
-        </div>
+
 
         <div class="large-6 columns">
             <div class="panel">
@@ -237,13 +232,7 @@
                             </label>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <label>Fax
-                                <input type="text" name="customer_fax" placeholder=""/>
-                            </label>
-                        </div>
-                    </div>
+
 
                 </div>
 

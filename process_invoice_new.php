@@ -1,7 +1,4 @@
 <?php
-//print_r($_REQUEST);
-include_once('tcpdf/tcpdf.php');
-
 /* recaptcha validation */
 $data = ['secret' => '6LcsmAQTAAAAAATo5gKVZzIvCwuLO-JTGRHG3fmp', 'response' => $_REQUEST['g-recaptcha-response']];
 $data = http_build_query($data);
@@ -18,304 +15,189 @@ $result = file_get_contents('https://www.google.com/recaptcha/api/siteverify', f
 
 $success_status = json_decode($result)->success;
 
-if ($success_status) {
-    // create new PDF document
-    $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+if($success_status) {
+$currency_code = $_REQUEST['currency_code'];
+$invoice_details_table = "";
+$sub_total = number_format($_REQUEST["sub_total"], 2);
+$total_due = number_format($_REQUEST["total_due"], 2);
+$advance = number_format($_REQUEST["advance"], 2);
 
-// set document information
-    $pdf->SetCreator(PDF_CREATOR);
-    $pdf->SetAuthor('Invoicer');
-    $pdf->SetTitle($_REQUEST['invoice_title']);
-    $pdf->SetSubject($_REQUEST['invoice_number'] . ' - ' . $_REQUEST['invoice_date']);
-    $pdf->SetKeywords('');
+for($i = 0; $i < count($_REQUEST['item_no']); $i++) {
+$invoice_details_table .= "<tr><td>".$_REQUEST['item_no'][$i]."</td><td>".$_REQUEST['item'][$i]."</td><td>".$_REQUEST['description'][$i]."</td><td> ".$currency_code . " " .number_format($_REQUEST['unit_price'][$i], 2)."</td><td>".$_REQUEST['quantity'][$i]."</td><td> ".$currency_code . " " .number_format($_REQUEST['total'][$i], 2)."</td></tr>";
+} ?>
+<!doctype html>
+<html class="no-js" lang="en">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <head>
+        <title>Invoice_<?php echo $_REQUEST["invoice_number"]; ?></title>
+    </head>
+    <body>
+    <div class="row">
+        <div class="large-12 columns">
+            <h3>Invoice Preview</h3>
 
-// set default header data
-//$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 001', PDF_HEADER_STRING, array(0,64,255), array(0,64,128));
+            <h4>Actions</h4>
+            <div class="panel">
+                <script>
+                    function print() {
 
-//$pdf->SetHeaderData(''.$_REQUEST['your_company_logo_url'], PDF_HEADER_LOGO_WIDTH, $_REQUEST['invoice_title'] . ' - ' . $_REQUEST['invoice_number'] . ' - ' . $_REQUEST['invoice_date'], $_REQUEST['invoice_title'] . ' - ' . $_REQUEST['invoice_number'] . ' - ' . $_REQUEST['invoice_date'], array(0,64,255), array(0,64,128));
-    $pdf->setFooterData(array(0, 64, 0), array(0, 64, 128));
 
-// set header and footer fonts
-    $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
-    $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+                        var myWindow=window.open('','','width=1000,height=1000');
+                        var printcontent = document.getElementById('print-area').innerHTML;
+                        myWindow.document.write(printcontent);
 
-// set default monospaced font
-    $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-
-// set margins
-    $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
-    $pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
-    $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
-
-// set auto page breaks
-    $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-
-// set image scale factor
-    $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-
-// set some language-dependent strings (optional)
-    if (@file_exists(dirname(__FILE__) . '/lang/eng.php')) {
-        require_once(dirname(__FILE__) . '/lang/eng.php');
-        $pdf->setLanguageArray($l);
-    }
-
-// ---------------------------------------------------------
-
-// set default font subsetting mode
-    $pdf->setFontSubsetting(true);
-
-// Set font
-// dejavusans is a UTF-8 Unicode font, if you only need to
-// print standard ASCII chars, you can use core fonts like
-// helvetica or times to reduce file size.
-    $pdf->SetFont('dejavusans', '', 12, '', true);
-
-// Add a page
-// This method has several options, check the source code documentation for more information.
-    $pdf->AddPage();
-
-// set text shadow effect
-    $pdf->setTextShadow(array('enabled' => true, 'depth_w' => 0.2, 'depth_h' => 0.2, 'color' => array(196, 196, 196), 'opacity' => 1, 'blend_mode' => 'Normal'));
-
-    $currency_code = $_REQUEST['currency_code'];
-    $sub_total = number_format($_REQUEST["sub_total"], 2);
-    $advance = number_format($_REQUEST["advance"], 2);
-    $total_due = number_format($_REQUEST["total_due"], 2);
-    $invoice_details_table = "";
-
-    for ($i = 0; $i < count($_REQUEST['item_no']); $i++) {
-        $invoice_details_table .= "<tr><td>" . $_REQUEST['item_no'][$i] . "</td><td>" . $_REQUEST['item'][$i] . "</td><td>" . $_REQUEST['description'][$i] . "</td><td> " . $currency_code . " " . number_format($_REQUEST['unit_price'][$i], 2) . "</td><td>" . $_REQUEST['quantity'][$i] . "</td><td> " . $currency_code . " " . number_format($_REQUEST['total'][$i], 2) . "</td></tr>";
-    }
+                        myWindow.document.close();
+                        myWindow.focus();
+                        myWindow.print();
+                        myWindow.close();
 
 
 
+                    }
+                </script>
+                <input type="button" onclick="print()" class="button success" value="Print" />
+                <a href="index.php"  class="button" >New Invoice</a>
+            </div>
+        </div>
+    </div>
+        <div id="print-area">
+        <div class="row text-center">
+            <div class="large-12 columns">
+                <h1><?php echo $_REQUEST["invoice_title"]; ?></h1>
+            </div>
+        </div>
 
-//print_r($invoice_details_table);
+        <div class="row">
+            <div class="large-6 columns text-right right">
+                <p><strong>Invoiced By: </strong><?php echo $_REQUEST["your_company_name"]; ?><br/>
+                    <?php echo $_REQUEST["your_address_1"]; ?>, <?php echo $_REQUEST["your_address_2"]; ?>,<br/>
+                    <?php echo $_REQUEST["your_city"]; ?>, <?php echo $_REQUEST["your_state"]; ?>,<br/>
+                    <?php echo $_REQUEST["your_country"]; ?>, <?php echo $_REQUEST["your_zip_code"]; ?><br/>
+                    <strong>T:</strong> <?php echo $_REQUEST["your_phone"]; ?> <strong>E:</strong> <?php echo $_REQUEST["your_email"]; ?><br/>
 
-// Set some content to print
-    $html = <<<EOD
-    <!-- EXAMPLE OF CSS STYLE -->
-<style>
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+            </div>
+            <div class="large-6 columns left">
+                <p><strong>Invoiced To: </strong><?php echo $_REQUEST["customer_company_name"]; ?><br/>
+                <?php echo $_REQUEST["customer_address_1"]; ?>, <?php echo $_REQUEST["customer_address_2"]; ?>,<br/>
+                <?php echo $_REQUEST["customer_city"]; ?>, <?php echo $_REQUEST["customer_state"]; ?>,<br/>
+                <?php echo $_REQUEST["customer_country"]; ?>, <?php echo $_REQUEST["customer_zip_code"]; ?><br/>
+                <strong>T:</strong> <?php echo $_REQUEST["customer_phone"]; ?> <strong>E:</strong> <?php echo $_REQUEST["customer_email"]; ?><br/>
 
-a {
-  color: #5D6975;
-  text-decoration: underline;
-}
+            </div>
 
-body {
-  position: relative;
-  width: 21cm;
-  height: 29.7cm;
-  margin: 0 auto;
-  color: #001028;
-  background: #FFFFFF;
-  font-family: Arial, sans-serif;
-  font-size: 12px;
-  font-family: Arial;
-}
+        </div>
 
-header {
-  padding: 10px 0;
-  margin-bottom: 30px;
-}
+        <div class="row text-right">
+            <div class="large-12 columns">
+                <p><strong>Invoice Date:</strong>  <?php echo $_REQUEST["invoice_date"]; ?></p>
+                <p><strong>Invoice Number:</strong>  <?php echo $_REQUEST["invoice_number"]; ?></p>
+            </div>
+        </div>
 
-#logo {
-  text-align: center;
-  margin-bottom: 10px;
-}
+        <div class="row">
+            <div class="large-12 columns">
 
-#logo img {
-  width: 90px;
-}
+                    <table>
+                        <tr>
+                            <th>Line No</th>
+                            <th>Item</th>
+                            <th>Description</th>
+                            <th>Unit Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
 
-h1 {
-  border-top: 1px solid  #5D6975;
-  border-bottom: 1px solid  #5D6975;
-  color: #5D6975;
-  font-size: 2.4em;
-  line-height: 1.4em;
-  font-weight: normal;
-  text-align: center;
-  margin: 0 0 20px 0;
-  background: url(dimension.png);
-}
+                        </tr>
+                        <?php echo $invoice_details_table; ?>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <th>Sub Total</th>
+                            <td><?php echo $currency_code; ?> <?php echo $sub_total; ?></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <th>Taxes</th>
+                            <td><?php echo $_REQUEST["taxes"]; ?> %</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <th>Discounts</th>
+                            <td><?php echo $_REQUEST["discounts"]; ?> %</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <th>Advance</th>
+                            <td><?php echo $currency_code; ?> <?php echo $advance; ?></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <th>Total Due</th>
+                            <td><?php echo $currency_code; ?> <?php echo $total_due; ?></td>
+                        </tr>
+                    </table>
 
-#project {
-  float: left;
-}
+            </div>
+        </div>
 
-#project span {
-  color: #5D6975;
-  text-align: right;
-  width: 52px;
-  margin-right: 10px;
-  display: inline-block;
-  font-size: 0.8em;
-}
+        <div class="row">
+            <div class="large-12 columns">
+                <div class="panel">
+                    <p><strong>Terms:</strong> <?php echo $_REQUEST["terms"]; ?></p>
+                </div>
+            </div>
+        </div>
 
-#company {
-  float: right;
-  text-align: right;
-}
+        <div class="row">
+            <div class="large-12 columns">
+                <div class="panel">
+                    <p><strong>Notes:</strong> <?php echo $_REQUEST["notes"]; ?></p>
+                </div>
+            </div>
+        </div>
 
-#project div,
-#company div {
-  white-space: nowrap;
-}
+    <link rel="stylesheet" href="css/foundation.css"/>
+    <script src="js/vendor/modernizr.js"></script>
+    <style>
+        h1 {
+            background: #000000;
+            color: #fff;
+            padding: 10px;
+            float: left;
+            width: 100%;
+            font-size: 18px;;
+        }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
-  margin-bottom: 20px;
-}
-
-table tr:nth-child(2n-1) td {
-  background: #F5F5F5;
-}
-
-table th,
-table td {
-  text-align: center;
-}
-
-table th {
-  padding: 5px 20px;
-  color: #5D6975;
-  border-bottom: 1px solid #C1CED9;
-  white-space: nowrap;
-  font-weight: normal;
-}
-
-table .service,
-table .desc {
-  text-align: left;
-}
-
-table td {
-  padding: 20px;
-  text-align: right;
-}
-
-table td.service,
-table td.desc {
-  vertical-align: top;
-}
-
-table td.unit,
-table td.qty,
-table td.total {
-  font-size: 1.2em;
-}
-
-table td.grand {
-  border-top: 1px solid #5D6975;;
-}
-
-#notices .notice {
-  color: #5D6975;
-  font-size: 1.2em;
-}
-
-footer {
-  color: #5D6975;
-  width: 100%;
-  height: 30px;
-  position: absolute;
-  bottom: 0;
-  border-top: 1px solid #C1CED9;
-  padding: 8px 0;
-  text-align: center;
-}
-</style>
+        table {
+            width: 100%;
+            float: left;
+        }
+    </style>
+        <script src="js/vendor/jquery.js"></script>
+        <script src="js/foundation.min.js"></script>
+        <script>
+            $(document).foundation();
 
 
+        </script>
+        </div>
+    </body>
+</html>
 
-      <h1>{$_REQUEST["invoice_title"]} - {$_REQUEST["invoice_number"]}</h1>
-      <div id="company" class="clearfix">
-        <div>{$_REQUEST["your_company_name"]}</div>
-        <div>{$_REQUEST["your_address_1"]}, {$_REQUEST["your_address_2"]}<br /> {$_REQUEST["your_city"]}, {$_REQUEST["your_state"]}, {$_REQUEST["your_country"]}, {$_REQUEST["your_zip_code"]}</div>
-        <div>{$_REQUEST["your_phone"]}</div>
-        <div><a href="mailto:{$_REQUEST["your_email"]}">{$_REQUEST["your_email"]}</a></div>
-      </div>
-      <div id="project">
-       <div><span>CLIENT</span> {$_REQUEST["customer_company_name"]}</div>
-        <div><span>ADDRESS</span> {$_REQUEST["customer_address_1"]}, {$_REQUEST["customer_address_2"]}, {$_REQUEST["customer_city"]}, {$_REQUEST["customer_state"]}, {$_REQUEST["customer_country"]}, {$_REQUEST["customer_zip_code"]}</div>
-        <div><span>PHONE</span> {$_REQUEST["customer_phone"]}</div>
-        <div><span>EMAIL</span> <a href="mailto:{$_REQUEST["customer_email"]}">{$_REQUEST["customer_email"]}</a></div>
-        <div><span>DATE</span> {$_REQUEST["invoice_date"]}</div>
-
-      </div>
-    </header>
-    <main>
-      <table>
-        <thead>
-          <tr>
-            <th class="service">Line No</th>
-            <th class="desc">Item</th>
-            <th>Description</th>
-            <th>Unit Price</th>
-            <th>Quantity</th>
-            <th>Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          {$invoice_details_table}
-          <tr>
-            <td colspan="5">Sub Total</td>
-            <td class="total">{$currency_code} {$sub_total}</td>
-          </tr>
-          <tr>
-            <td colspan="5">Taxes</td>
-            <td class="total">{$_REQUEST["taxes"]} %</td>
-          </tr>
-          <tr>
-            <td colspan="5">Discounts</td>
-            <td class="total">{$_REQUEST["discounts"]} %</td>
-          </tr>
-          <tr>
-            <td colspan="5">Advance</td>
-            <td class="total">{$currency_code} {$advance}</td>
-          </tr>
-          <tr>
-            <td colspan="5" class="grand total">Total Due</td>
-            <td class="grand total">{$currency_code} {$total_due}</td>
-          </tr>
-        </tbody>
-      </table>
-      <div id="notices">
-        <div>Terms:</div>
-        <div class="notice">{$_REQUEST["terms"]}</div>
-      </div>
-      <div id="notices">
-        <div>Notes:</div>
-        <div class="notice">{$_REQUEST["notes"]}</div>
-      </div>
-    </main>
-    <footer>
-      Invoice was created on a computer and is valid without the signature and seal.
-    </footer>
-
-EOD;
-
-// Print text using writeHTMLCell()
-    $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
-
-// ---------------------------------------------------------
-
-// Close and output PDF document
-// This method has several options, check the source code documentation for more information.
-    $pdf->Output('invoice-' . $_REQUEST['invoice_number'] . '.pdf', 'I');
-
-//============================================================+
-// END OF FILE
-//============================================================+
-} else {
+<?php } else {
     echo "You look like a spam bot. Please make sure you click the captcha tool if your human. <a href='http://invoicer.surendias.com/'>Go Back</a>";
 }
-
