@@ -18,3 +18,4 @@ Future plans,
 3. Create estimates.
 4. Format the invoice.
 
+The first version is available for use on http://invoicer.surendias.com
