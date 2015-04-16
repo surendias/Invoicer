@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1eb25c46-2121-4a72-a3c2-e604dd0089af" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/process_invoice_mpdf.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.yaml" afterPath="$PROJECT_DIR$/app.yaml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/invoice-generator.iml" afterPath="$PROJECT_DIR$/.idea/invoice-generator.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/process_invoice_new.php" afterPath="$PROJECT_DIR$/process_invoice_new.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="invoice-generator.iws" />
@@ -31,97 +29,7 @@
     <favorites_list name="invoice-generator" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="12" selection-start="562" selection-end="562" vertical-scroll-proportion="0.42882884" vertical-offset="0" max-vertical-offset="8279">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="process_invoice.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/process_invoice.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3842">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="process_invoice_new.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/process_invoice_new.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="3553">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="2924">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="print_preview.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/print_preview.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="50.384617" vertical-offset="1310" max-vertical-offset="2839">
-              <folding>
-                <marker date="1428761794654" expanded="true" signature="697:5334" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="800:1204" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="918:1196" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="931:1107" placeholder="{...}" />
-                <marker date="1428761794654" expanded="true" signature="1123:1184" placeholder="{...}" />
-                <marker date="1428761794654" expanded="true" signature="1211:5326" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="1229:1539" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="1264:1532" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="1351:1521" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="1569:1681" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="1604:1674" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="1700:2904" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="1734:2311" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="1746:2305" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="2356:2897" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="2368:2891" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="2934:3167" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="2969:3160" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="3186:4792" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="3221:4785" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="3238:4773" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="3255:3475" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="3542:3780" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="3797:4011" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="4028:4250" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="4267:4501" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="4518:4756" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="4811:4984" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="4846:4977" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="4874:4966" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="5003:5176" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="5038:5169" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="5066:5158" placeholder="..." />
-                <marker date="1428761794654" expanded="true" signature="5276:5318" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tcpdf_autoconfig.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tcpdf/tcpdf_autoconfig.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4199">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -139,6 +47,10 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/app.yaml" />
+        <option value="$PROJECT_DIR$/process_invoice_new.php" />
+        <option value="$PROJECT_DIR$/mpdf/config.php" />
+        <option value="$PROJECT_DIR$/process_invoice_mpdf.php" />
         <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
@@ -148,10 +60,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="1358" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="754" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -210,8 +122,8 @@
     <property name="LayoutCode.rearrangeEntriesPHP" value="true" />
     <property name="last_opened_file_path" value="C:/Python27/python.exe" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -269,7 +181,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="1358" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -277,7 +189,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23718888" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16770834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -313,21 +225,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/foundation-datepicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/foundation-datepicker.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tcpdf/examples/example_001.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tcpdf/examples/tcpdf_include.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
@@ -348,24 +245,7 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tcpdf/tcpdf_autoconfig.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process_invoice.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <folding />
@@ -377,9 +257,54 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="33" selection-start="793" selection-end="793" vertical-scroll-proportion="0.0" vertical-offset="194" max-vertical-offset="816">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969" />
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="328" column="9" selection-start="9969" selection-end="9969" vertical-scroll-proportion="0.3483146" vertical-offset="5390" max-vertical-offset="18003" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_invoice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3842">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mpdf/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="290" column="8" selection-start="13597" selection-end="13597" vertical-scroll-proportion="0.0" vertical-offset="4930" max-vertical-offset="9809">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/process_invoice_new.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+        <state line="6" column="29" selection-start="247" selection-end="247" vertical-scroll-proportion="-0.5150502" vertical-offset="564" max-vertical-offset="3502">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/print_preview.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2839">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_invoice_mpdf.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="23" selection-start="3711" selection-end="3711" vertical-scroll-proportion="0.46265328" vertical-offset="979" max-vertical-offset="3026">
           <folding />
         </state>
       </provider>
@@ -391,51 +316,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/print_preview.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="50.384617" vertical-offset="1310" max-vertical-offset="2839">
-          <folding>
-            <marker date="1428761794654" expanded="true" signature="697:5334" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="800:1204" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="918:1196" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="931:1107" placeholder="{...}" />
-            <marker date="1428761794654" expanded="true" signature="1123:1184" placeholder="{...}" />
-            <marker date="1428761794654" expanded="true" signature="1211:5326" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="1229:1539" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="1264:1532" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="1351:1521" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="1569:1681" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="1604:1674" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="1700:2904" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="1734:2311" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="1746:2305" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="2356:2897" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="2368:2891" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="2934:3167" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="2969:3160" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="3186:4792" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="3221:4785" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="3238:4773" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="3255:3475" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="3542:3780" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="3797:4011" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="4028:4250" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="4267:4501" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="4518:4756" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="4811:4984" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="4846:4977" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="4874:4966" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="5003:5176" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="5038:5169" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="5066:5158" placeholder="..." />
-            <marker date="1428761794654" expanded="true" signature="5276:5318" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="12" selection-start="562" selection-end="562" vertical-scroll-proportion="0.42882884" vertical-offset="0" max-vertical-offset="8279">
+        <state line="13" column="0" selection-start="549" selection-end="549" vertical-scroll-proportion="0.24285714" vertical-offset="0" max-vertical-offset="8279">
           <folding />
         </state>
       </provider>

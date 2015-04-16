@@ -38,3 +38,6 @@ handlers:
 
 - url: /process_invoice.php
   script: process_invoice.php
+
+- url: /process_invoice_new.php
+  script: process_invoice_new.php
