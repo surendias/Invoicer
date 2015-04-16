@@ -1,19 +1,20 @@
 <?php
 /* recaptcha validation */
-$data = ['secret' => '6LcsmAQTAAAAAATo5gKVZzIvCwuLO-JTGRHG3fmp', 'response' => $_REQUEST['g-recaptcha-response']];
-$data = http_build_query($data);
-$context = [
-    'http' => [
-        'method' => 'POST',
-        'header' => "custom-header: custom-value\r\n" .
-            "custom-header-two: custom-value-2\r\n",
-        'content' => $data
-    ]
-];
-$context = stream_context_create($context);
-$result = file_get_contents('https://www.google.com/recaptcha/api/siteverify', false, $context);
+//$data = ['secret' => '6LcsmAQTAAAAAATo5gKVZzIvCwuLO-JTGRHG3fmp', 'response' => $_REQUEST['g-recaptcha-response']];
+//$data = http_build_query($data);
+//$context = [
+//    'http' => [
+//        'method' => 'POST',
+//        'header' => "custom-header: custom-value\r\n" .
+//            "custom-header-two: custom-value-2\r\n",
+//        'content' => $data
+//    ]
+//];
+//$context = stream_context_create($context);
+//$result = file_get_contents('https://www.google.com/recaptcha/api/siteverify', false, $context);
 
-$success_status = json_decode($result)->success;
+//$success_status = json_decode($result)->success;
+$success_status = true;
 
 if($success_status) {
 $currency_code = $_REQUEST['currency_code'];
@@ -41,8 +42,6 @@ $invoice_details_table .= "<tr><td>".$_REQUEST['item_no'][$i]."</td><td>".$_REQU
             <div class="panel">
                 <script>
                     function print() {
-
-
                         var myWindow=window.open('','','width=1000,height=1000');
                         var printcontent = document.getElementById('print-area').innerHTML;
                         myWindow.document.write(printcontent);
@@ -51,9 +50,6 @@ $invoice_details_table .= "<tr><td>".$_REQUEST['item_no'][$i]."</td><td>".$_REQU
                         myWindow.focus();
                         myWindow.print();
                         myWindow.close();
-
-
-
                     }
                 </script>
                 <input type="button" onclick="print()" class="button success" value="Print" />
@@ -61,6 +57,7 @@ $invoice_details_table .= "<tr><td>".$_REQUEST['item_no'][$i]."</td><td>".$_REQU
             </div>
         </div>
     </div>
+
         <div id="print-area">
         <div class="row text-center">
             <div class="large-12 columns">
