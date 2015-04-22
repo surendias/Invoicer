@@ -1,4 +1,4 @@
-application: avian-principle-90010
+application: invoicer-apps-v1
 version: 1
 runtime: php
 api_version: 1
@@ -38,3 +38,9 @@ handlers:
 
 - url: /process_invoice.php
   script: process_invoice.php
+
+- url: /process_invoice_new.php
+  script: process_invoice_new.php
+
+- url: /process_invoice_mpdf.php
+  script: process_invoice_mpdf.php
