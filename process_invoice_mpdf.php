@@ -2,7 +2,7 @@
 include('mpdf/mpdf.php');
 
 /* recaptcha validation */
-$data = ['secret' => '6LcElgUTAAAAAFF2FpM8XJoGbiPvstYEbT9_6-SJ', 'response' => $_REQUEST['g-recaptcha-response']];
+$data = ['secret' => '6LcsmAQTAAAAAATo5gKVZzIvCwuLO-JTGRHG3fmp', 'response' => $_REQUEST['g-recaptcha-response']];
 $data = http_build_query($data);
 $context = [
     'http' => [
@@ -73,19 +73,47 @@ if($success_status) {
         <table cellpadding="10" style="border:0px;">
             <tr>
                 <td>
-                    <p><strong>Invoiced By: </strong>' . $_REQUEST["your_company_name"] . '<br/>
-                        ' . $_REQUEST["your_address_1"]. ', ' . $_REQUEST["your_address_2"] . ',<br/>
-                        ' . $_REQUEST["your_city"] . ', ' . $_REQUEST["your_state"] . ',<br/>
-                        ' . $_REQUEST["your_country"] . ', ' . $_REQUEST["your_zip_code"] . '<br/>
-                        <strong>T:</strong> ' . $_REQUEST["your_phone"] . ' <strong>E:</strong> ' . $_REQUEST["your_email"] . '<br/></p>
+                    <p><strong>Invoiced By: </strong>' . $_REQUEST["your_company_name"] . '<br/>';
+
+    if($_REQUEST["your_address"]!='') {
+        $html .=  ' ' . $_REQUEST["your_address"] . ',<br/> ';
+
+    }
+
+    if($_REQUEST["your_phone"]!='') {
+        $html .=  '<strong>T:</strong> ' . $_REQUEST["your_phone"] . ' ,<br/> ';
+    }
+
+    if($_REQUEST["your_email"]!='') {
+        $html .=  '  <strong>E:</strong> ' . $_REQUEST["your_email"] . ',<br/> ';
+    }
+
+
+
+
+    $html .=  '</p>
                 </td>
 
                 <td align="right">
-                    <p><strong>Invoiced To: </strong>' . $_REQUEST["customer_company_name"] . '<br/>
-                    ' . $_REQUEST["customer_address_1"] . ', ' . $_REQUEST["customer_address_2"] . ',<br/>
-                    ' . $_REQUEST["customer_city"] . ', ' . $_REQUEST["customer_state"] . ',<br/>
-                    ' . $_REQUEST["customer_country"] . ', ' . $_REQUEST["customer_zip_code"] . '<br/>
-                    <strong>T:</strong> ' . $_REQUEST["customer_phone"] . ' <strong>E:</strong> ' . $_REQUEST["customer_email"] . '<br/></p>
+                    <p><strong>Invoiced To: </strong>' . $_REQUEST["customer_company_name"] . '<br/>';
+
+    if($_REQUEST["customer_address"]!='') {
+        $html .=  ' ' . $_REQUEST["customer_address"] . ',<br/> ';
+
+    }
+
+    if($_REQUEST["customer_phone"]!='') {
+        $html .=  '<strong>T:</strong> ' . $_REQUEST["customer_phone"] . ' ,<br/> ';
+    }
+
+    if($_REQUEST["customer_email"]!='') {
+        $html .=  '  <strong>E:</strong> ' . $_REQUEST["customer_email"] . ',<br/> ';
+    }
+
+
+
+
+    $html .=  '</p>
                 </td>
             </tr>
         </table>

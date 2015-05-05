@@ -78,71 +78,29 @@
                         </label>
                     </div>
                 </div>
-                <!--div class="row">
-                    <div class="large-12 columns">
-                        <label>Company Logo URL
-                            <input type="text" name="your_company_logo_url" placeholder="" required/>
-                        </label>
-                    </div>
-                </div-->
-
-
-                <div class="panel">
+               <div class="panel">
                     <h6>Contact Details</h6>
 
                     <div class="row">
                         <div class="large-12 columns">
-                            <label>Address 1
-                                <input type="text" name="your_address_1" placeholder="" required/>
+                            <label>Address
+                                <textarea name="your_address" id="" cols="30" rows="10"></textarea>
                             </label>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <label>Address 2
-                                <input type="text" name="your_address_2" placeholder=""/>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <label>City
-                                <input type="text" name="your_city" placeholder="" required/>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <label>State
-                                <input type="text" name="your_state" placeholder="" required/>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <label>Country
-                                <input type="text" name="your_country" placeholder="" required/>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <label>Zip Code
-                                <input type="text" name="your_zip_code" placeholder="" required/>
-                            </label>
-                        </div>
-                    </div>
+
+
                     <div class="row">
                         <div class="large-12 columns">
                             <label>Phone
-                                <input type="text" name="your_phone" placeholder="" required/>
+                                <input type="text" name="your_phone" placeholder=""/>
                             </label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="large-12 columns">
                             <label>Email
-                                <input type="text" name="your_email" placeholder="" required type="email"/>
+                                <input type="text" name="your_email" placeholder="" type="email"/>
                             </label>
                         </div>
                     </div>
@@ -161,75 +119,31 @@
                 <div class="row">
                     <div class="large-12 columns">
                         <label>Customer Company Name
-                            <input type="text" name="customer_company_name" placeholder="" required/>
+                            <input type="text" name="customer_company_name" placeholder=""/>
                         </label>
                     </div>
                 </div>
-                <!--div class="row">
-                    <div class="large-12 columns">
-                        <label>Company Logo URL
-                            <input type="text" name="customer_company_logo_url" placeholder="" required/>
-                        </label>
-                    </div>
-                </div-->
-
-
                 <div class="panel">
                     <h6>Contact Details</h6>
 
                     <div class="row">
                         <div class="large-12 columns">
-                            <label>Address 1
-                                <input type="text" name="customer_address_1" placeholder="" required/>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <label>Address 2
-                                <input type="text" name="customer_address_2" placeholder="" required/>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <label>City
-                                <input type="text" name="customer_city" placeholder="" required/>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <label>State
-                                <input type="text" name="customer_state" placeholder="" required/>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <label>Country
-                                <input type="text" name="customer_country" placeholder="" required/>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <label>Zip Code
-                                <input type="text" name="customer_zip_code" placeholder="" required/>
+                            <label>Address
+                                <textarea name="customer_address" id="" cols="30" rows="10"></textarea>
                             </label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="large-12 columns">
                             <label>Phone
-                                <input type="text" name="customer_phone" placeholder="" required/>
+                                <input type="text" name="customer_phone" placeholder=""/>
                             </label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="large-12 columns">
                             <label>Email
-                                <input type="text" name="customer_email" placeholder="" required type="email"/>
+                                <input type="text" name="customer_email" placeholder="" type="email"/>
                             </label>
                         </div>
                     </div>
@@ -333,14 +247,14 @@
             <div class="row">
                 <div class="large-12 columns">
                     <label>Terms
-                        <textarea name="terms" placeholder="" required></textarea>
+                        <textarea name="terms" placeholder=""></textarea>
                     </label>
                 </div>
             </div>
             <div class="row">
                 <div class="large-12 columns">
                     <label>Notes
-                        <textarea name="notes" placeholder="" required></textarea>
+                        <textarea name="notes" placeholder=""></textarea>
                     </label>
                 </div>
             </div>
@@ -355,7 +269,7 @@
             <div class="row text-center action-buttons">
                 <div class="large-12 columns">
                     <p>Please click the check box to prove that your not a spam bot. Thanks.</p>
-                    <div class="g-recaptcha" data-sitekey="6LcElgUTAAAAALuYyUgKYwXDxNlrJsCJwXnhmn3s"></div>
+                    <div class="g-recaptcha" data-sitekey="6LcsmAQTAAAAAIKkuHijL8SQbMSL-vxlzJIyZAau"></div>
                 </div>
             </div>
 
